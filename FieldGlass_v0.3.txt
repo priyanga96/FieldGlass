@@ -1,0 +1,11 @@
+@ECHO OFF
+title FieldGlassAutomation
+ECHO View Job Posting Details
+chdir /d C:\FieldGlassAutomation\Output
+move job_*.xlsx old_records
+cd..
+cd Input
+start java -jar FieldGlass_v0.3.jar %Login.xlsx
+Pause
+move job_*.xlsx ..\Output
+EXIT
